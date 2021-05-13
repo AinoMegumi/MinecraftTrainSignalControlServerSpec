@@ -25,6 +25,48 @@
                     }
                 }
             }
+        },
+        "/{routeid}": {
+            "post": {
+                "summary": "信号機の情報追加",
+                "description": "路線の信号機の現示情報を追加します。",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "description": "路線ID",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009-ce03-4332-86fc-bc46edeb1967"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "text/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "reveals": {
+                                        "type": "array",
+                                        "description": "各信号機の現示コードリスト。このリストは必ず始発駅の出発信号機から順番に設定し、路線内の全ての信号機を登録して下さい。信号現示コードはREADME.mdを参照して下さい。",
+                                        "example": [3, 3, 3, 4, 3, 0]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "各信号機のIDを配列で返します。配列は始発駅から順番になっています。"
+                    },
+                    "404": {
+                        "description": "路線が存在しない"
+                    }
+                }
+            }
         }
     }
 }
