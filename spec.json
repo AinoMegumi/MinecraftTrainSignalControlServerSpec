@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Minecraft Train Signal Control Server",
+        "version": "1.0.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://signalctl.minecraft.kamioda.tokyo/v1",
+            "description": "signal control server"
+        }
+    ],
+    "paths": {
+        
+    }
+}
