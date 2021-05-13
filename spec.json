@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.2",
     "info": {
-        "title": "Minecraft Train Signal Control Server",
+        "title": "Minecraft鉄道信号制御サーバー(追い越し非対応版)",
         "version": "1.0.0.0"
     },
     "servers": [
