@@ -10,6 +10,21 @@
         }
     ],
     "paths": {
-        
+        "/" : {
+            "post": {
+                "summary": "路線追加",
+                "description": "路線を追加します。路線に上り線と下り線がある場合、それらは別の路線として扱われます。",
+                "responses": {
+                    "200": {
+                        "description": "路線IDを返します",
+                        "content": {
+                            "text/plain": {
+                                "example": "57ca4009-ce03-4332-86fc-bc46edeb1967"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
