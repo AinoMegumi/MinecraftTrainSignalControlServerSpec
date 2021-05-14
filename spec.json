@@ -298,6 +298,40 @@
                         "description": "路線IDまたは信号機IDが存在しない"
                     }
                 }
+            },
+            "delete": {
+                "summary": "信号機の削除",
+                "description": "指定された信号機を削除します。",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    },
+                    {
+                        "name": "trafficid",
+                        "in": "path",
+                        "description": "信号機ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "0825a9e7f9464b66b2539ae535400d79"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "削除成功"
+                    },
+                    "404": {
+                        "description": "路線IDまたは信号機IDが存在しない"
+                    }
+                }
             }
         }
     }
