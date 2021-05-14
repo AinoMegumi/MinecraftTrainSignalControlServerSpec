@@ -214,7 +214,7 @@
                     {
                         "name": "trafficid",
                         "in": "path",
-                        "description": "信号機ID",
+                        "description": "信号機ID。allを指定すると、全ての信号機を停止現示に、clearを指定すると、全ての信号機を各信号機の現示可能な最大の現示（２灯式RY灯火型の場合は注意、高速進行現示対応信号機は高速進行、それ以外は進行現示)に変更します。",
                         "required": true,
                         "schema": {
                             "type": "string",
