@@ -38,7 +38,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "路線IDと各信号機のIDを返します",
                         "content": {
                             "text/json": {
