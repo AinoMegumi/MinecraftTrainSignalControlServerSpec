@@ -25,8 +25,14 @@
                                         "type": "array",
                                         "description": "信号機パターンコードリスト。このリストは必ず始発駅の出発信号機から順番に設定し、路線内の全ての信号機を登録して下さい。信号機パターンコードはREADME.mdを参照して下さい。",
                                         "example": [3, 3, 3, 4, 3, 0]
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "路線名",
+                                        "example": "天の川高速鉄道天の川第１線下り線"
                                     }
-                                }
+                                },
+                                "required": [ "reveals", "name" ]
                             }
                         }
                     }
