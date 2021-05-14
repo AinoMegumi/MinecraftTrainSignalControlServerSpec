@@ -126,7 +126,7 @@
                 "description": "指定されたIDの路線の情報を取得します。",
                 "parameters": [
                     {
-                        "name": "name",
+                        "name": "id",
                         "in": "query",
                         "description": "路線名",
                         "required": true,
