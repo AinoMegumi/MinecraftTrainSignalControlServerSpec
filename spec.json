@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "https://signalctl.minecraft.kamioda.tokyo/v1",
+            "url": "http://localhost/v1",
             "description": "signal control server"
         }
     ],
