@@ -231,40 +231,6 @@
                     }
                 }
             },
-            "post": {
-                "summary": "信号機の追加",
-                "description": "指定された信号機の後ろに新しい信号機を１つ追加します",
-                "parameters": [
-                    {
-                        "name": "routeid",
-                        "in": "path",
-                        "description": "路線ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "example": "57ca4009ce03433286fcbc46edeb1967"
-                        }
-                    },
-                    {
-                        "name": "trafficid",
-                        "in": "path",
-                        "description": "信号機ID。始発駅の出発信号機の前に追加したい場合は値を'front'にして下さい。",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "example": "0825a9e7f9464b66b2539ae535400d79"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "追加した信号機のIDを返します。"
-                    },
-                    "404": {
-                        "description": "路線IDまたは信号機IDが存在しない"
-                    }
-                }
-            },
             "get": {
                 "summary": "信号機の現示を取得",
                 "description": "指定された信号機の現示を取得します。信号機の現示IDはREADME.mdを参照して下さい。",
@@ -327,6 +293,52 @@
                 "responses": {
                     "200": {
                         "description": "削除成功"
+                    },
+                    "404": {
+                        "description": "路線IDまたは信号機IDが存在しない"
+                    }
+                }
+            }
+        },
+        "/{routeid}/{trafficid}/{traffictypeid}": {
+            "post": {
+                "summary": "信号機の追加",
+                "description": "指定された信号機の次に新しい信号機を１つ追加します",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    },
+                    {
+                        "name": "trafficid",
+                        "in": "path",
+                        "description": "信号機ID。始発駅の出発信号機の前に追加したい場合は値を'front'にして下さい。",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "0825a9e7f9464b66b2539ae535400d79"
+                        }
+                    },
+                    {
+                        "name": "traffictypeid",
+                        "in": "path",
+                        "description": "信号機パターンコード",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 3
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "追加した信号機のIDを返します。"
                     },
                     "404": {
                         "description": "路線IDまたは信号機IDが存在しない"
