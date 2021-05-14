@@ -344,6 +344,49 @@
                         "description": "路線IDまたは信号機IDが存在しない"
                     }
                 }
+            },
+            "put": {
+                "summary": "信号機の種別変更",
+                "description": "指定された信号機の種類を変更します",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    },
+                    {
+                        "name": "trafficid",
+                        "in": "path",
+                        "description": "信号機ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "0825a9e7f9464b66b2539ae535400d79"
+                        }
+                    },
+                    {
+                        "name": "traffictypeid",
+                        "in": "path",
+                        "description": "新しい信号機パターンコード",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 3
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "信号機種別変更成功"
+                    },
+                    "404": {
+                        "description": "路線IDまたは信号機IDが存在しない"
+                    }
             }
         }
     }
