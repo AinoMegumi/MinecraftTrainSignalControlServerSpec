@@ -150,10 +150,6 @@
                                         "description": "新しい路線名",
                                         "example": "天の川高速鉄道天の川第１線上り線"
                                     },
-                                    "currentPassword": {
-                                        "description": "現在のパスワード。設定されている場合は必須",
-                                        "example": "amanogawatetsudou"
-                                    },
                                     "newPassword": {
                                         "description": "新しいパスワード",
                                         "example": "amanogawanobori"
