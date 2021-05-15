@@ -176,6 +176,55 @@
                     }
                 }
             },
+            "patch": {
+                "summary": "路線設定の変更",
+                "description": "路線の名前とパスワードを変更できます。",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "text/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "新しい路線名",
+                                        "example": "天の川高速鉄道天の川第１線上り線"
+                                    },
+                                    "currentPassword": {
+                                        "description": "現在のパスワード。設定されている場合は必須",
+                                        "example": "amanogawatetsudou"
+                                    },
+                                    "newPassword": {
+                                        "description": "新しいパスワード",
+                                        "example": "amanogawanobori"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "更新成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
+                    },
+                    "404": {
+                        "description": "路線IDが存在しない"
+                    }
+                }
+            },
             "delete": {
                 "summary": "路線削除",
                 "description": "路線を削除します。",
