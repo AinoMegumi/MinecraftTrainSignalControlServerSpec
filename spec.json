@@ -30,6 +30,11 @@
                                         "type": "string",
                                         "description": "路線名",
                                         "example": "天の川高速鉄道天の川第１線下り線"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "路線のパスワード",
+                                        "example": "amanogawatetsudou"
                                     }
                                 },
                                 "required": [ "reveals", "name" ]
