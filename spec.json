@@ -73,56 +73,6 @@
                         }
                     }
                 }
-            },
-            "get": {
-                "summary": "路線IDの取得",
-                "description": "指定された路線名の路線IDを取得します。",
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "路線名",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "example": "天の川高速鉄道天の川第１線下り線"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "路線IDと各信号機のIDを返します",
-                        "content": {
-                            "text/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "routeid": {
-                                            "description": "路線ID",
-                                            "type": "string",
-                                            "example": "57ca4009ce03433286fcbc46edeb1967"
-                                        },
-                                        "traffics": {
-                                            "type": "array",
-                                            "description": "信号機ID(始発駅の出発信号機に近い方から順番)",
-                                            "example": [ 
-                                                "0825a9e7f9464b66b2539ae535400d79", 
-                                                "402780daf0964144a2b6f7f9d7517e35",
-                                                "e545ab2127a84d6e9a26d425b174643d",
-                                                "a7f3de63c17b4d7dbfdd1cd247a9b2cd",
-                                                "60ffe7acdebf4bc99bf753d26dcc18e4",
-                                                "c71ebe3f84bb4b1fa3fd36ceb0eb2b6d"
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "指定された名前の路線が存在しない"
-                    }
-                }
             }
         },
         "/{routeid}": {
