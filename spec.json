@@ -139,6 +139,15 @@
                             "type": "string",
                             "example": "57ca4009ce03433286fcbc46edeb1967"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "requestBody": {
@@ -184,11 +193,23 @@
                             "type": "string",
                             "example": "57ca4009ce03433286fcbc46edeb1967"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "路線削除成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
                     },
                     "404": {
                         "description": "路線IDが存在しない"
@@ -220,11 +241,23 @@
                             "type": "string",
                             "example": "0825a9e7f9464b66b2539ae535400d79"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "信号機の現示データ更新成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
                     },
                     "404": {
                         "description": "路線IDまたは信号機IDが存在しない"
@@ -288,11 +321,23 @@
                             "type": "string",
                             "example": "0825a9e7f9464b66b2539ae535400d79"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "削除成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
                     },
                     "404": {
                         "description": "路線IDまたは信号機IDが存在しない"
@@ -334,11 +379,23 @@
                             "type": "integer",
                             "example": 3
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "responses": {
                     "201": {
                         "description": "追加した信号機のIDを返します。"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
                     },
                     "404": {
                         "description": "路線IDまたは信号機IDが存在しない"
@@ -378,11 +435,23 @@
                             "type": "integer",
                             "example": 3
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "信号機種別変更成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
                     },
                     "404": {
                         "description": "路線IDまたは信号機IDが存在しない"
