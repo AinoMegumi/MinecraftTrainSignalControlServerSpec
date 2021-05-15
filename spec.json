@@ -131,13 +131,13 @@
                 "description": "指定されたIDの路線の情報を取得します。",
                 "parameters": [
                     {
-                        "name": "id",
-                        "in": "query",
-                        "description": "路線名",
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "example": "天の川高速鉄道天の川第１線下り線"
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
                         }
                     }
                 ],
@@ -181,13 +181,13 @@
                 "description": "路線を削除します。",
                 "parameters": [
                     {
-                        "name": "name",
-                        "in": "query",
-                        "description": "路線名",
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "example": "天の川高速鉄道天の川第１線下り線"
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
                         }
                     }
                 ],
