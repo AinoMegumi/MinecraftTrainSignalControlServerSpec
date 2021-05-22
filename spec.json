@@ -345,6 +345,54 @@
                 }
             }
         },
+        "/{routeid}/{trafficid}/open": {
+            "post": {
+                "summary": "信号機の防護区間の開通",
+                "description": "指定された信号機の防護区間を開通させる時に使用します。このリクエストが来ると、指定された信号機をその先の信号機に合わせて開通させ、その手前の信号の色の制御も行います。",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    },
+                    {
+                        "name": "trafficid",
+                        "in": "path",
+                        "description": "信号機ID。allを指定すると、全ての信号機を停止現示に、clearを指定すると、全ての信号機を各信号機の現示可能な最大の現示（２灯式RY灯火型の場合は注意、高速進行現示対応信号機は高速進行、それ以外は進行現示)に変更します。",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "0825a9e7f9464b66b2539ae535400d79"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "路線のパスワードをBase64暗号化したもの。設定時は必須",
+                        "schema":  {
+                            "type": "string",
+                            "example": "amanogawatetsudou"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "信号機の現示データ更新成功"
+                    },
+                    "401": {
+                        "description": "パスワードが違う"
+                    },
+                    "404": {
+                        "description": "路線IDまたは信号機IDが存在しない"
+                    }
+                }
+            }
+        }
         "/{routeid}/{trafficid}/{traffictypeid}": {
             "post": {
                 "summary": "信号機の追加",
