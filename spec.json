@@ -430,7 +430,7 @@
                     }
                 }
             }
-        }
+        },
         "/{routeid}/{trafficid}/{traffictypeid}": {
             "post": {
                 "summary": "信号機の追加",
