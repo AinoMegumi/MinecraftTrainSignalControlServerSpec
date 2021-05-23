@@ -311,6 +311,32 @@
                 }
             }
         },
+        "/{routeid}/reveal": {
+            "get": {
+                "summary": "全信号機の現示を取得",
+                "description": "全ての信号機の現示を取得します。信号機の現示IDはREADME.mdを参照して下さい。",
+                "parameters": [
+                    {
+                        "name": "routeid",
+                        "in": "path",
+                        "description": "路線ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "57ca4009ce03433286fcbc46edeb1967"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "信号機の現示IDを返します。"
+                    },
+                    "404": {
+                        "description": "路線IDが存在しない"
+                    }
+                }
+            }
+        },
         "/{routeid}/{trafficid}/reveal": {
             "get": {
                 "summary": "信号機の現示を取得",
@@ -430,7 +456,7 @@
                     }
                 }
             }
-        }
+        },
         "/{routeid}/{trafficid}/{traffictypeid}": {
             "post": {
                 "summary": "信号機の追加",
